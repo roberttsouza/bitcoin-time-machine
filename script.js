@@ -1,6 +1,17 @@
-document.getElementById("calculateButton").addEventListener("click", function() {
+document.getElementById("calculateButton").addEventListener("click", function () {
+    startLoadingAnimation();
     calculateBitcoinValue();
 });
+
+function startLoadingAnimation() {
+    const resultCard = document.querySelector(".result-card");
+    resultCard.classList.add("loading");
+}
+
+function stopLoadingAnimation() {
+    const resultCard = document.querySelector(".result-card");
+    resultCard.classList.remove("loading");
+}
 
 function calculateBitcoinValue() {
     const currency = document.getElementById("currency").value;
@@ -9,6 +20,7 @@ function calculateBitcoinValue() {
 
     if (isNaN(amount) || amount <= 0) {
         alert("Por favor, insira uma quantidade válida na moeda selecionada.");
+        stopLoadingAnimation(); // Adicione esta linha para parar a animação em caso de erro
         return;
     }
 
@@ -16,7 +28,7 @@ function calculateBitcoinValue() {
 
     $.ajax({
         url: `https://min-api.cryptocompare.com/data/pricehistorical?fsym=BTC&tsyms=${currency}&ts=${Date.parse(date) / 1000}`,
-        success: function(data) {
+        success: function (data) {
             if (data.BTC && data.BTC[currency]) {
                 const bitcoinPriceAtPurchase = data.BTC[currency];
                 const amountInBTC = amount / bitcoinPriceAtPurchase;
@@ -24,7 +36,7 @@ function calculateBitcoinValue() {
                 // Obtenha o preço atual do Bitcoin
                 $.ajax({
                     url: `https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=${currency}`,
-                    success: function(currentData) {
+                    success: function (currentData) {
                         if (currentData[currency]) {
                             const currentBitcoinPrice = currentData[currency];
                             const totalValueNow = amountInBTC * currentBitcoinPrice;
@@ -49,24 +61,25 @@ function calculateBitcoinValue() {
                         } else {
                             alert("Não foi possível obter o preço atual do Bitcoin.");
                         }
+                        // Remova a classe de animação quando a requisição for concluída com sucesso
+                        stopLoadingAnimation();
                     },
-                    error: function() {
+                    error: function () {
                         alert("Ocorreu um erro ao buscar o preço atual do Bitcoin.");
+                        // Remova a classe de animação quando a requisição falhar
+                        stopLoadingAnimation();
                     }
                 });
             } else {
                 alert("Não foi possível obter os dados de preço na data informada.");
+                // Remova a classe de animação quando a requisição falhar
+                stopLoadingAnimation();
             }
         },
-        error: function() {
+        error: function () {
             alert("Ocorreu um erro ao buscar os dados de preço do Bitcoin na data informada.");
+            // Remova a classe de animação quando a requisição falhar
+            stopLoadingAnimation();
         }
     });
 }
-
-
-
-
-  var typed = new Typed('#element', {
-    strings: ['<h2>Bitcoin Time Machine.</h2> <br>^1000\n <p>`Veja quanto você teria se tivesse comprado Bitcoin quando você conheceu a cripto`</p>'],
-  });
