@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Bitcoin Time Machine</title>
+</head>
+
+<body>
+
+    <div class="containerMain">
+        <div class="contentform">
+
+            <h1 class="descriptinAction">E se eu tivesse investido</h1>
+            <input type="text" id="amount" step="0.01" placeholder="Quantidade">
+            <select id="currency">
+                <option value="BRL">BRL</option>
+                <option value="USD">USD</option>
+            </select>
+            <h1>em BTC em </h1>
+            <input type="date" id="date">
+            <br>
+            <button id="calculateButton">Como teria sido?</button>
+
+        </div>
+
+        <div class="contentResult">
+            <div class="textContainer">
+                <h2 class="resultText">Você agora teria <span class="textdecorResult">*** BTC</span>, que valem <span
+                        class="textdecorResult">$***</span> hoje. <br>
+                    Seria um lucro de <span class="textdecorResult2">***%</span></h2>
+
+
+
+                <div id="result" class="result-card">
+                    <div class="card-item">
+                        <p>Preço de Compra (na data informada) </p><span id="purchasePrice">$***</span>
+                    </div>
+                    <div class="card-item">
+                        <p>Quantidade (BTC que poderia ter comprado na data informada) </p><span id="purchaseAmount">***
+                            BTC</span>
+                    </div>
+                    <div class="card-item">
+                        <p>Preço Atual do Bitcoin </p><span id="currentPrice">$***</span>
+                    </div>
+                    <div class="card-item">
+                        <p>Valor Total Agora </p><span id="currentTotalValue">$***</span>
+                    </div>
+                    <div class="card-item">
+                        <p>Lucro em $ </p><span id="profitInUSD">$***</span>
+                    </div>
+                    <div class="card-item">
+                        <p>Porcentagem de Ganho ou Perda </p><span id="profitPercentage">***%</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
