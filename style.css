@@ -8,8 +8,8 @@
 .containerMain {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    position: absolute;
-    top: 15%;
+    position: relative;
+   margin-top: 5%;
 }
 
 .contentform {
@@ -92,6 +92,44 @@
     color: #6C63FF;
 }
 
+
+
+
+
+#app {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 5%;
+  }
+  #app .btgrafico h1{
+    color: #485fb3;
+  }
+  #app button:focus{
+    background-color: #485fb3;
+    color: #d9e1ff;
+  }
+
+  #app .btnCsvBaixar:focus{
+    background-color: #45a8b3;
+  }
+button {
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: #d9e1ff6c;
+    color: #485fb3;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+
+  #chart {
+    width: 80%;
+    
+    margin: 20px auto;
+  }
+
 @media (max-width: 600px) {
     .containerMain {
         grid-template-columns: 1fr;
@@ -147,6 +185,20 @@
         margin: 10px;
         padding: 15px;
     }
+
+
+    #app {
+        text-align: center;
+        display: grid;
+        grid-template-columns:1fr;
+        margin-top: 15%;
+      }
+
+        #chart {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
 }
 
 .result-card.loading {

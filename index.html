@@ -3,23 +3,27 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E5G3J6336R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5G3J6336R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-E5G3J6336R');
-</script>
+        gtag('config', 'G-E5G3J6336R');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="icon" type="img/git/jpg" href="img/logo btctime.jpg">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Bitcoin Time Machine</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts/dist/locales/pt-br.js"></script>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>Bitcoin Time Machine</title>
 </head>
 
 <body>
@@ -69,6 +73,25 @@
                 </div>
 
             </div>
+        </div>
+    </div>
+
+
+    <div class="mainGrafico">
+        
+
+        <div id="app">
+            <div class="btgrafico">
+                <h1>Histórico de Preço Bitcoin</h1>
+                <button onclick="getData('1w')">Últimos 7 Dias</button>
+                <button onclick="getData('1m')">1 Mês</button>
+                <button onclick="getData('6m')">6 Meses</button>
+                <button onclick="getData('1y')">1 Ano</button>
+                <button onclick="getData('max')">Todo Período</button>
+                <button class="btnCsvBaixar" onclick="downloadCSV()">Baixar CSV <i class="ri-file-excel-2-line"></i></button>
+            </div>
+
+            <div id="chart"></div>
         </div>
     </div>
 
