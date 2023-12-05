@@ -29,20 +29,23 @@
 <body>
 
     <div class="containerMain">
-        <div class="contentform">
+        <div class="containerAllForm">
+            <div class="contentform">
 
-            <h1 class="descriptinAction">E se eu tivesse investido</h1>
-            <input type="text" id="amount" step="0.01" placeholder="Quantidade">
-            <select id="currency">
-                <option value="BRL">BRL</option>
-                <option value="USD">USD</option>
-            </select>
-            <h1>em BTC em </h1>
-            <input type="date" id="date">
-            <br>
-            <button id="calculateButton">Como teria sido?</button>
+                <h1 class="descriptinAction">E se eu tivesse investido</h1>
+                <input type="text" id="amount" step="0.01" placeholder="Quantidade">
+                <select id="currency">
+                    <option value="BRL">BRL</option>
+                    <option value="USD">USD</option>
+                </select>
+                <h1>em BTC em </h1>
+                <input type="date" id="date">
+                <br>
+                <button id="calculateButton">Como teria sido?</button>
 
+            </div>
         </div>
+
 
         <div class="contentResult">
             <div class="textContainer">
@@ -78,7 +81,7 @@
 
 
     <div class="mainGrafico">
-        
+
 
         <div id="app">
             <div class="btgrafico">
@@ -88,11 +91,47 @@
                 <button onclick="getData('6m')">6 Meses</button>
                 <button onclick="getData('1y')">1 Ano</button>
                 <button onclick="getData('max')">Todo Período</button>
-                <button class="btnCsvBaixar" onclick="downloadCSV()">Baixar CSV <i class="ri-file-excel-2-line"></i></button>
+                <button class="btnCsvBaixar" onclick="downloadCSV()">Baixar CSV <i
+                        class="ri-file-excel-2-line"></i></button>
             </div>
 
             <div id="chart"></div>
         </div>
+    </div>
+
+
+    <div class="conversorDeMoeda">
+        <h1>Converter Bitcoin (BTC) em moeda FIAT</h1>
+
+        <div class="formMoedas">
+            <label for="valor"></label>
+            <input type="number" id="valor" placeholder="Insira o valor">
+
+            <label for="moeda"></label>
+            <select id="moeda">
+                <!--mais opções conforme necessário -->
+                <option value="brl" class="a1">Real Brasileiro (BRL)</option>
+                <option value="usd">Dólar Americano (USD)</option>
+                <option value="eur">Euro (EUR)</option>
+                <option value="ars">Peso Argentino (ARS)</option>
+                <option value="gbp">Libra Esterlina (GBP)</option>
+                <option value="jpy">Iene Japonês (JPY)</option>
+                <option value="rub">Rublo Russo (RUB)</option>
+                <!--mais opções conforme necessário -->
+            </select>
+
+            <i class="ri-arrow-left-right-line"></i>
+
+            <button onclick="converterParaBTC()">Moeda para BTC</button>
+            <button onclick="converterParaMoeda()">BTC para Moeda</button>
+        </div>
+
+        <div id="resultado">
+            <p>Valor em ***</p>
+            <h1>*.***</h1>
+        </div>
+
+        
     </div>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>

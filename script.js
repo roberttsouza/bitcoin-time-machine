@@ -20,7 +20,7 @@ function calculateBitcoinValue() {
 
     if (isNaN(amount) || amount <= 0) {
         alert("Por favor, insira uma quantidade válida na moeda selecionada.");
-        stopLoadingAnimation(); // Adicione esta linha para parar a animação em caso de erro
+        stopLoadingAnimation();
         return;
     }
 
@@ -222,3 +222,45 @@ const apiUrl = 'https://api.coingecko.com/api/v3/';
 
     // Initialize with default data (1 week)
     getData('1w');
+
+
+    
+
+    // Conversor de moeda fiat para BTC
+
+
+    function converterParaBTC() {
+      const moedaSelecionada = document.getElementById('moeda').value;
+      const valorDigitado = document.getElementById('valor').value;
+
+      fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${moedaSelecionada}`)
+        .then(response => response.json())
+        .then(data => {
+          const taxaDeCambio = data.bitcoin[moedaSelecionada];
+          const valorConvertido = valorDigitado / taxaDeCambio;
+
+          document.getElementById('resultado').innerHTML = `<p>Valor em BTC:</p> <h1>${valorConvertido.toFixed(8)}</h1>`;
+        })
+        .catch(error => {
+          console.error('Erro ao obter a taxa de câmbio:', error);
+          document.getElementById('resultado').innerText = 'Erro ao converter para BTC';
+        });
+    }
+
+    function converterParaMoeda() {
+      const moedaSelecionada = document.getElementById('moeda').value;
+      const valorDigitado = document.getElementById('valor').value;
+
+      fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${moedaSelecionada}`)
+        .then(response => response.json())
+        .then(data => {
+          const taxaDeCambio = data.bitcoin[moedaSelecionada];
+          const valorConvertido = valorDigitado * taxaDeCambio;
+
+          document.getElementById('resultado').innerHTML = `<p> Valor em ${moedaSelecionada.toUpperCase()}:</p> <h1>${valorConvertido.toFixed(2)}</h1>`;
+        })
+        .catch(error => {
+          console.error('Erro ao obter a taxa de câmbio:', error);
+          document.getElementById('resultado').innerText = 'Erro ao converter para Moeda';
+        });
+    }
