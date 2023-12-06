@@ -264,3 +264,26 @@ const apiUrl = 'https://api.coingecko.com/api/v3/';
           document.getElementById('resultado').innerText = 'Erro ao converter para Moeda';
         });
     }
+
+
+
+
+
+    function open_sidebar() {
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    
+      // Verifica se a largura da tela é menor que 600 pixels (um exemplo, ajuste conforme necessário)
+      if (screenWidth < 600) {
+        document.querySelector(".sidebar").style.width = "50%";
+        document.querySelector(".btnOpenSedebar").style.display = "none";
+      } else {
+        document.querySelector(".sidebar").style.width = "15%";
+        document.querySelector(".btnOpenSedebar").style.display = "none";
+      }
+    }
+    
+    function close_sidebar() {
+      document.querySelector(".sidebar").style.width = "0";
+      document.querySelector(".btnOpenSedebar").style.display = "block";
+    }
+    

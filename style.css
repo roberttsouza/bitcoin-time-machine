@@ -1,102 +1,167 @@
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 0;
+  background-color: rgba(72, 95, 179, 0.9);
+  z-index: 1;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 17px 12px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 20px 10px;
+  cursor: pointer;
+  border-bottom: rgba(255, 255, 255, 0.123) solid 0.1px;
+}
+
+.sidebar li:hover {
+  background-image: linear-gradient(to right top, #a18dce, #9c92d4, #9797d9, #929cde, #8da1e2, #91a3e7, #96a4ed, #9ba6f2, #afa3f7, #c59ef8, #dd99f6, #f492f0);
+  border-radius: 50px 0 0 50px;
+  border: none;
+}
+
+.sidebar li a {
+  color: #d9e1ff;
+  font-weight: bold;
+}
+
+.btnOpenSedebar {
+
+  border-radius: 50%;
+  padding: 5px 11px;
+  background-color: #485fb3;
+  color: #d9e1ff;
+  font-size: 27px;
+  z-index: 2;
+}
+
+.navContainer {
+  position: absolute;
+  z-index: 1;
+}
+
+.btnCloseSedebar {
+  border-radius: 70%;
+  padding: 5px 11px;
+  background-color: #d9e1ff;
+  color: #485fb3;
+  font-size: 27px;
+  margin-bottom: 50px;
+}
+
+
+
+
+
+
+
 .containerMain {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    position: relative;
-   place-items: center;
-   background-color: #d9e1ff31;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  position: relative;
+  place-items: center;
+  background-color: #d9e1ff31;
 }
 
 .contentform {
-    background-color: #d9e1ff6c;
-    padding: 50px;
-    border-radius: 8px;
-    margin-left: 60px;
+  background-color: #d9e1ff6c;
+  padding: 50px;
+  border-radius: 8px;
+  margin-left: 60px;
 }
 
 .contentform .descriptinAction {
-    margin-top: -10%;
-    color: #485fb3;
+  margin-top: -10%;
+  color: #485fb3;
 }
 
 .contentform h1 {
-    color: #485fb3;
+  color: #485fb3;
 }
 
-.containerAllForm{
-    display: grid;
-    place-items: center;
-    height: 100vh;
+.containerAllForm {
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 
 .contentform #amount,
 .contentform #currency,
 .contentform #date,
 .contentform #calculateButton {
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
 }
 
 .contentform #calculateButton {
-    margin-top: 20px;
-    background-color: #6C63FF;
-    color: #d9e1ff;
-    font-weight: bold;
-    cursor: pointer;
+  margin-top: 20px;
+  background-color: #6C63FF;
+  color: #d9e1ff;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .contentResult {
-    margin-left: 20px;
-    border-radius: 8px;
+  margin-left: 20px;
+  border-radius: 8px;
 }
 
 .resultText,
 .textContainer h2 {
-    color: #485fb3;
-    text-align: center;
-    font-size: 25px;
-    margin-top: 20px;
+  color: #485fb3;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 20px;
 }
 
 .resultText .textdecorResult {
-    color: #9a63ff;
+  color: #9a63ff;
 }
 
 .resultText .textdecorResult2 {
-    color: #45a8b3;
+  color: #45a8b3;
 }
 
 .result-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    position: relative;
-    top: 40%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+  top: 40%;
 }
 
 .result-card .card-item {
-    margin: 10px;
-    background-color: #d9e1ff6c;
-    padding: 20px;
-    border-radius: 8px;
+  margin: 10px;
+  background-color: #d9e1ff6c;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .result-card .card-item p {
-    color: #485fb3;
+  color: #485fb3;
 }
 
 .result-card .card-item span {
-    font-weight: bold;
-    color: #6C63FF;
+  font-weight: bold;
+  color: #6C63FF;
 }
 
 
@@ -104,233 +169,265 @@
 
 
 #app {
-   width: 100%;
-    text-align: center;
-    display: grid;
+  width: 100%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 5%;
+}
+
+.mainGrafico {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+#app .btgrafico h1 {
+  color: #485fb3;
+}
+
+#app button:focus {
+  background-color: #485fb3;
+  color: #d9e1ff;
+}
+
+#app .btnCsvBaixar:focus {
+  background-color: #45a8b3;
+}
+
+button {
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  background-color: #d9e1ff6c;
+  color: #485fb3;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+#chart {
+  width: 80%;
+  margin: 20px auto;
+}
+
+
+.conversorDeMoeda {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #d9e1ff31;
+}
+
+.conversorDeMoeda h1 {
+  color: #485fb3;
+  text-align: center;
+  width: 90%;
+}
+
+.formMoedas {
+  width: 80%;
+  background-color: #d9e1ff;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 18px;
+}
+
+.formMoedas #valor {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+
+.formMoedas #moeda {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  outline: none;
+}
+
+.formMoedas button {
+  background-color: #6C63FF;
+  color: #ffffff;
+  padding: 15px 25px;
+}
+
+.formMoedas .ri-arrow-left-right-line {
+  margin: 0 20px;
+  font-size: 22px;
+}
+
+
+#resultado {
+  width: 30%;
+  background-image: linear-gradient(to right top, #b3c3ff, #bdcaff, #c6d2ff, #cfd9ff, #d9e1ff);
+  padding: 100px 20px;
+  border-radius: 16px;
+  margin-top: -10%;
+}
+
+#resultado p {
+  color: #485fb3;
+}
+
+#resultado h1 {
+  text-align: left;
+  font-size: 76px;
+}
+
+
+
+
+.qrcode {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  width: 60px;
+  height: 60px;
+  background-color: #45a8b3;
+  z-index: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.qrcode:hover {
+  width: 200px;
+  height: 300px;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .containerMain {
     grid-template-columns: 1fr;
+    position: relative;
+    margin: auto;
+    top: 0;
+  }
+
+  .contentform {
+    max-width: 350px;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  .containerAllForm {
+    height: 70vh;
+  }
+
+  .contentform #amount,
+  .contentform #currency,
+  .contentform #date,
+  .contentform #calculateButton {
+    padding: 10px;
+  }
+
+  .contentResult {
+    margin-left: 0px;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .resultText,
+  .textContainer h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    max-width: 350px;
+    margin: 10% auto 5% auto;
+  }
+
+  .contentform .descriptinAction {
     margin-top: 5%;
   }
 
-  .mainGrafico{
+  .contentform #date {
+    padding: 10px;
+  }
+
+  .result-card {
+    grid-template-columns: 1fr 1fr;
+    top: 0;
+    left: 0;
+  }
+
+  .result-card .card-item {
+    margin: 10px;
+    padding: 15px;
+  }
+
+
+  #app {
+    text-align: center;
     display: grid;
-    place-items: center;
-    height: 100vh;
-  }
-
-  #app .btgrafico h1{
-    color: #485fb3;
-  }
-  #app button:focus{
-    background-color: #485fb3;
-    color: #d9e1ff;
-  }
-
-  #app .btnCsvBaixar:focus{
-    background-color: #45a8b3;
-  }
-button {
-    margin: 5px;
-    border: none;
-    border-radius: 6px;
-    background-color: #d9e1ff6c;
-    color: #485fb3;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 25px;
+    grid-template-columns: 1fr;
+    margin-top: 15%;
   }
 
   #chart {
-    width: 80%;
-    margin: 20px auto;
-  }
-
-
-  .conversorDeMoeda{
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    background-color: #d9e1ff31;
-  }
-
-  .conversorDeMoeda h1{
-    color: #485fb3;
-    text-align: center;
-    width: 90%;
-  }
-
-  .formMoedas{
-    width: 80%;
-    background-color: #d9e1ff;
-    text-align: center;
-    padding: 20px 0;
-    border-radius: 18px;
-  }
-  .formMoedas #valor{
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px 0 0 8px;
-    outline: none;
-  }
-  .formMoedas #moeda{
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-    border-radius: 0 8px 8px 0;
-    outline: none;
-  }
-
-  .formMoedas button{
-    background-color: #6C63FF;
-    color: #ffffff;
-    padding: 15px 25px;
-  }
-
-  .formMoedas .ri-arrow-left-right-line{
-    margin: 0 20px;
-    font-size: 22px;
-  }
-
-
-  #resultado{
-    width: 30%;
-    background-image: linear-gradient(to right top, #b3c3ff, #bdcaff, #c6d2ff, #cfd9ff, #d9e1ff);
-    padding: 100px 20px;
-    border-radius: 16px;
-    margin-top: -10%;
-  }
-
-  #resultado p{
-    color: #485fb3;
-  }
-
-  #resultado h1{
-    text-align: left;
-    font-size: 76px;
-  }
-@media (max-width: 600px) {
-    .containerMain {
-        grid-template-columns: 1fr;
-        position: relative;
-        margin: auto;
-        top: 0;
-    }
-
-    .contentform {
-        max-width: 350px;
-        padding: 20px;
-        margin: auto;
-        text-align: center;
-        margin-top: 10%;
-    }
-
-    .containerAllForm{
-        height: 70vh;
-    }
-
-    .contentform #amount,
-    .contentform #currency,
-    .contentform #date,
-    .contentform #calculateButton {
-        padding: 10px;
-    }
-
-    .contentResult {
-        margin-left: 0px;
-        max-width: 500px;
-        margin: auto;
-    }
-
-    .resultText,
-    .textContainer h2 {
-        font-size: 20px;
-        margin-top: 20px;
-        max-width: 350px;
-        margin: 10% auto 5% auto;
-    }
-
-    .contentform .descriptinAction {
-        margin-top: 5%;
-    }
-
-    .contentform #date {
-        padding: 10px;
-    }
-
-    .result-card {
-        grid-template-columns: 1fr 1fr;
-        top: 0;
-        left: 0;
-    }
-
-    .result-card .card-item {
-        margin: 10px;
-        padding: 15px;
-    }
-
-
-    #app {
-        text-align: center;
-        display: grid;
-        grid-template-columns:1fr;
-        margin-top: 15%;
-      }
-
-        #chart {
     width: 80%;
     max-width: 600px;
     margin: 20px auto;
   }
 
-  .formMoedas{
+  .formMoedas {
     display: flex;
     flex-flow: column;
   }
-  .formMoedas #valor{
+
+  .formMoedas #valor {
     margin: auto;
     width: 80%;
     border-radius: 8px;
   }
-  .formMoedas #moeda{
+
+  .formMoedas #moeda {
     margin: 20px auto;
     width: 85%;
     border-radius: 8px;
   }
-  .formMoedas button{
+
+  .formMoedas button {
     margin: 5px auto;
     width: 80%;
   }
 
-  #resultado{
+  #resultado {
     width: 70%;
     padding: 50px 20px;
     margin-top: -5%;
   }
 
-  #resultado p{
+  #resultado p {
     color: #485fb3;
   }
 
-  #resultado h1{
+  #resultado h1 {
     text-align: left;
     font-size: 26px;
   }
 }
 
 .result-card.loading {
-    animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

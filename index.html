@@ -28,11 +28,27 @@
 
 <body>
 
-    <div class="containerMain">
+    <div class="qrcode"></div>
+
+        <div class="sidebar" id="mySidebarID">
+            <button onclick="close_sidebar()" class="btnCloseSedebar"><i class="ri-arrow-left-s-line"></i></button>
+            <ul>
+              <li><a href="#eSe" class="linkSadebar">E se? <i class="ri-hourglass-2-line"></i></a></li>
+              <li><a href="#graficosID" class="linkSadebar">Histórico de Preço <i class="ri-line-chart-line"></i></a></li>
+              <li><a href="#converterID" class="linkSadebar">Converter Bitcoin <i class="ri-btc-line"></i></a></li>
+            </ul>
+          </div>
+          
+          <div class="navContainer">
+            <button class="btnOpenSedebar" onclick="open_sidebar()"><i class="ri-arrow-right-s-line"></i></button>
+          </div>
+          
+
+    <div class="containerMain" id="eSe">
         <div class="containerAllForm">
             <div class="contentform">
 
-                <h1 class="descriptinAction">E se eu tivesse investido</h1>
+                <h1 class="descriptinAction" >E se eu tivesse investido</h1>
                 <input type="text" id="amount" step="0.01" placeholder="Quantidade">
                 <select id="currency">
                     <option value="BRL">BRL</option>
@@ -80,7 +96,7 @@
     </div>
 
 
-    <div class="mainGrafico">
+    <div class="mainGrafico" id="graficosID">
 
 
         <div id="app">
@@ -100,7 +116,7 @@
     </div>
 
 
-    <div class="conversorDeMoeda">
+    <div class="conversorDeMoeda" id="converterID">
         <h1>Converter Bitcoin (BTC) em moeda FIAT</h1>
 
         <div class="formMoedas">
@@ -131,7 +147,7 @@
             <h1>*.***</h1>
         </div>
 
-        
+
     </div>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
