@@ -10,10 +10,12 @@
   position: fixed;
   height: 100%;
   width: 0;
-  background-color: rgba(72, 95, 179, 0.9);
+  background-color: #485fb3;
   z-index: 1;
   border-radius: 0 16px 16px 0;
-  box-shadow: 17px 12px 15px -3px rgba(0, 0, 0, 0.1);
+background: linear-gradient(145deg, #485fb3, #9a63ff);
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
   overflow-x: hidden;
   transition: width 0.3s ease-in-out;
 }
@@ -31,7 +33,7 @@
 
 .sidebar li:hover {
   background-image: linear-gradient(to right top, #a18dce, #9c92d4, #9797d9, #929cde, #8da1e2, #91a3e7, #96a4ed, #9ba6f2, #afa3f7, #c59ef8, #dd99f6, #f492f0);
-  border-radius: 50px 0 0 50px;
+
   border: none;
 }
 
@@ -283,24 +285,31 @@ button {
 
 
 
-.qrcode {
+#qrcode {
   position: fixed;
   bottom: 5%;
   right: 5%;
   width: 60px;
   height: 60px;
-  background-color: #45a8b3;
+  background-color: #9a63ff;
+  color: #ffffff;
+  font-weight: bold;
+  background-image: url("img/OIG.jpg");
+  background-size: contain;
+background-repeat: no-repeat;
+box-shadow:  16px 16px 32px #b3b3b3,
+             -16px -16px 32px #ffffff;
   z-index: 1;
   border-radius: 50%;
   cursor: pointer;
   transition: .3s;
 }
 
-.qrcode:hover {
-  width: 200px;
-  height: 300px;
-  border-radius: 6px;
+#qrcodeText{
+  margin-top: 105%;
 }
+
+
 
 @media (max-width: 600px) {
   .containerMain {

@@ -287,3 +287,50 @@ const apiUrl = 'https://api.coingecko.com/api/v3/';
       document.querySelector(".btnOpenSedebar").style.display = "block";
     }
     
+
+
+    
+    var qrcodeElement = document.getElementById('qrcode');
+    var qrcodeTextElement = document.getElementById('qrcodeText');
+
+    function toggleQRCode() {
+      if (qrcodeElement.style.width === "60px") {
+        // Expandir o QR Code
+        qrcodeElement.style.width = "250px";
+        qrcodeElement.style.height = "300px";
+        qrcodeElement.style.borderRadius = "6px";
+        qrcodeElement.style.backgroundImage = 'url("img/QRcodeLightnig.jpeg")';
+        qrcodeTextElement.textContent = 'Me doe uns Satoshinhos';
+        qrcodeTextElement.style.textAlign = 'center';
+        
+  
+        // Adicionar um ouvinte de clique no documento para fechar o QR Code
+        document.addEventListener('click', closeQRCode);
+      } else {
+        // Reduzir o QR Code
+        qrcodeElement.style.width = "60px";
+        qrcodeElement.style.height = "60px";
+        qrcodeElement.style.borderRadius = "50px";
+        qrcodeElement.style.backgroundImage = '';
+        qrcodeTextElement.textContent = '';
+  
+        // Remover o ouvinte de clique no documento
+        document.removeEventListener('click', closeQRCode);
+      }
+    }
+  
+    function closeQRCode(event) {
+      // Verificar se o clique foi dentro ou fora do QR Code
+      if (!qrcodeElement.contains(event.target)) {
+        // Reduzir o QR Code quando o usuário clicar fora dele
+        qrcodeElement.style.width = "60px";
+        qrcodeElement.style.height = "60px";
+        qrcodeElement.style.borderRadius = "50px";
+        qrcodeElement.style.backgroundImage = '';
+        qrcodeTextElement.textContent = ''
+
+  
+        // Remover o ouvinte de clique no documento
+        document.removeEventListener('click', closeQRCode);
+      }
+    }
