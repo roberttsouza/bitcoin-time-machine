@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="icon" type="img/git/jpg" href="img/logo btctime.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts/dist/locales/pt-br.js"></script>
 </head>
@@ -28,29 +29,29 @@
 
 <body>
 
-    <div id="qrcode"  onclick="toggleQRCode()">
+    <div id="qrcode" onclick="toggleQRCode()">
         <div id="qrcodeText"></div>
     </div>
 
-        <div class="sidebar" id="mySidebarID">
-            <button onclick="close_sidebar()" class="btnCloseSedebar"><i class="ri-arrow-left-s-line"></i></button>
-            <ul>
-              <li><a href="#eSe" class="linkSadebar">E se? <i class="ri-hourglass-2-line"></i></a></li>
-              <li><a href="#graficosID" class="linkSadebar">Histórico de Preço <i class="ri-line-chart-line"></i></a></li>
-              <li><a href="#converterID" class="linkSadebar">Converter Bitcoin <i class="ri-btc-line"></i></a></li>
-            </ul>
-          </div>
-          
-          <div class="navContainer">
-            <button class="btnOpenSedebar" onclick="open_sidebar()"><i class="ri-arrow-right-s-line"></i></button>
-          </div>
-          
+    <div class="sidebar" id="mySidebarID">
+        <button onclick="close_sidebar()" class="btnCloseSedebar"><i class="ri-arrow-left-s-line"></i></button>
+        <ul>
+            <li><a href="#eSe" class="linkSadebar">E se? <i class="ri-hourglass-2-line"></i></a></li>
+            <li><a href="#graficosID" class="linkSadebar">Histórico de Preço <i class="ri-line-chart-line"></i></a></li>
+            <li><a href="#converterID" class="linkSadebar">Converter Bitcoin <i class="ri-btc-line"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="navContainer">
+        <button class="btnOpenSedebar" onclick="open_sidebar()"><i class="ri-arrow-right-s-line"></i></button>
+    </div>
+
 
     <div class="containerMain" id="eSe">
         <div class="containerAllForm">
             <div class="contentform">
 
-                <h1 class="descriptinAction" >E se eu tivesse investido</h1>
+                <h1 class="descriptinAction">E se eu tivesse investido</h1>
                 <input type="text" id="amount" step="0.01" placeholder="Quantidade">
                 <select id="currency">
                     <option value="BRL">BRL</option>
@@ -150,7 +151,22 @@
         </div>
 
 
+
     </div>
+
+    <div class="container">
+        <h1><span>Bitcoin</span> halving contagem decrescente.</h1>
+        <div id="countdown"></div> 
+        <div id="cards-container" class="cards-container"></div>
+    </div>
+
+   
+
+
+    <footer>
+        <p id="footer-text">Desenvolvido por <a href="https://robertt.netlify.app/" target="_blank">Robertt Souza</a>
+            &copy; <span id="current-year"></span></p>
+    </footer>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="script.js"></script>
