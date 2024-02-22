@@ -1,3 +1,22 @@
+/*função Dark mode*/
+const $html = document.querySelector('html')
+const $checkbox = document.querySelector('#switch')
+
+$checkbox.addEventListener('change', function() {
+    $html.classList.toggle('dark-mode')
+})
+
+function openNav() {
+  document.getElementById("my-menu-nav").style.height = "100vh" ;
+}
+
+function closeNav() {
+  document.getElementById("my-menu-nav").style.height = "0";
+}
+
+
+
+
 document.getElementById("calculateButton").addEventListener("click", function () {
   startLoadingAnimation();
   calculateBitcoinValue();
@@ -269,25 +288,6 @@ function converterParaMoeda() {
 
 
 
-function open_sidebar() {
-  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-  // Verifica se a largura da tela é menor que 600 pixels (um exemplo, ajuste conforme necessário)
-  if (screenWidth < 600) {
-    document.querySelector(".sidebar").style.width = "50%";
-    document.querySelector(".btnOpenSedebar").style.display = "none";
-  } else {
-    document.querySelector(".sidebar").style.width = "15%";
-    document.querySelector(".btnOpenSedebar").style.display = "none";
-  }
-}
-
-function close_sidebar() {
-  document.querySelector(".sidebar").style.width = "0";
-  document.querySelector(".btnOpenSedebar").style.display = "block";
-}
-
-
 
 
 var qrcodeElement = document.getElementById('qrcode');
@@ -398,7 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
               
               <div class="previstoHalving">
-              <span>previsto para ${halvingDate.toLocaleString()}</span>
+              <span>Previsto para ${halvingDate.toLocaleString()}</span>
               </div>`
 
         }, 1000);
