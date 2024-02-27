@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5G3J6336R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E5G3J6336R');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="Bitcoin halving contagem regresiva"
+        content="Acompanhe a contagem regresiva para o próximo Halving do Bitcoin.">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="img/git/jpg" href="img/logo btctime.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts/dist/locales/pt-br.js"></script>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>Bitcoin Time Machine</title>
+</head>
+
+<body>
+
+    <div id="qrcode" onclick="toggleQRCode()">
+        <div id="qrcodeText"></div>
+    </div>
+    
+    <div class="menu-container">
+        <a class="logo" href="#"><img src="/img/btc.png" alt="Logo com as iniciais R S em roxo"></a>
+
+        <nav id="my-menu-nav" class="menu-nav">
+            
+            <ul>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="ri-close-line"></i></a>
+                <li><a href="#sobre">Historia do Bitcoin</a></li>
+                <li><a href="#projeto">Ferramentas</a></li>
+                <li><a href="#servico">Onde Comprar?</a></li>
+                <li><a href="#conhecimento">wallets</a></li>
+                <li>
+                    <label for="switch" class="dark-mode-container" >
+                    <input type="checkbox" id="switch">
+                    <div class="btn-dark"></div>
+                    </label>
+                </li>
+            </ul>
+
+        </nav>
+        <span class="menu-open" style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="ri-menu-4-line"></i></span>
+    </div><br><br><br>
+
+    <div class="container">
+        <h1><span>Bitcoin</span> halving contagem regresiva.</h1>
+        <div id="countdown"></div> 
+        <div id="cards-container" class="cards-container"></div>
+    </div>
+
+    <div class="halvingContext">
+        <h1>O que é o halving dos blocos do Bitcoin?</h1>
+        <p>O Halving dos blocos do Bitcoin é um evento especial que acontece a cada 4 anos ou a cada vez que 210,000 blocos de transações são adicionados ao registro público do Bitcoin, chamado de blockchain. Agora, imagine que o Bitcoin é como um tesouro digital e cada bloco é uma parte desse tesouro. No começo, quando o Bitcoin foi criado, quem encontrava um bloco recebia 50 "moedas" de Bitcoin como recompensa por seu trabalho. Mas a cada Halving, essa recompensa é cortada pela metade. Então, depois do primeiro Halving, em vez de 50, a recompensa passou a ser de apenas 25 Bitcoin por bloco. Depois do segundo Halving, caiu para 12.5 Bitcoin por bloco, e assim por diante. Agora, está em 6.25 Bitcoin por bloco.</p>
+        <h1>Mas por que isso acontece? </h1>
+        <p>Imagine que você tem uma caixa de chocolates e alguém lhe dá um novo chocolate a cada dia. Se a pessoa começar a dar mais chocolates todos os dias, eventualmente você terá muitos chocolates e eles não serão tão especiais. O mesmo acontece com o dinheiro. Se os governos imprimem muito dinheiro, ele perde seu valor e você não consegue comprar tanto com ele. O Bitcoin é diferente porque foi projetado para ser como ouro digital, com uma quantidade limitada. Então, quando o Halving acontece e a recompensa é cortada pela metade, isso significa que menos novos Bitcoins estão sendo criados, o que o torna mais raro e valioso. E quando algo é mais raro e valioso, as pessoas geralmente querem mais dele, então o preço pode subir.</p>
+    </div>
+   
+
+
+    <footer>
+        <p id="footer-text">Desenvolvido por <a href="https://robertt.netlify.app/" target="_blank">Robertt Souza</a>
+            &copy; <span id="current-year"></span></p>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="/script.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -15,6 +15,17 @@ function closeNav() {
 }
 
 
+// Atualiza o ano no rodapé
+function updateYear() {
+  var currentYear = new Date().getFullYear();
+  document.getElementById("current-year").textContent = currentYear;
+}
+
+// função uma vez para definir o ano inicial
+updateYear();
+
+//intervalo para atualizar o ano a cada virada de ano
+setInterval(updateYear, 1000 * 60 * 60 * 24); // Atualiza a cada 24 horas (para lidar com alterações de fuso horário)
 
 
 document.getElementById("calculateButton").addEventListener("click", function () {
@@ -417,26 +428,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Atualiza o ano no rodapé
-function updateYear() {
-  var currentYear = new Date().getFullYear();
-  document.getElementById("current-year").textContent = currentYear;
-}
-
-// função uma vez para definir o ano inicial
-updateYear();
-
-//intervalo para atualizar o ano a cada virada de ano
-setInterval(updateYear, 1000 * 60 * 60 * 24); // Atualiza a cada 24 horas (para lidar com alterações de fuso horário)
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const apiUrl = "https://api.coingecko.com/api/v3/coins/bitcoin";
 
   const cardsContainer = document.getElementById("cards-container");
 
-  // Simulando requisição à API
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
